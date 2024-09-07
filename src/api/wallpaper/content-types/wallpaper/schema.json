@@ -1,0 +1,22 @@
+{
+  "kind": "singleType",
+  "collectionName": "wallpapers",
+  "info": {
+    "singularName": "wallpaper",
+    "pluralName": "wallpapers",
+    "displayName": "wallpaper"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "banners": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}
