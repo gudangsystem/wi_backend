@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "customer_services",
+  "info": {
+    "singularName": "customer-service",
+    "pluralName": "customer-services",
+    "displayName": "customer_service"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "whatsapp": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

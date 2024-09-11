@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "categories",
+  "collectionName": "promos",
   "info": {
-    "singularName": "category",
-    "pluralName": "categories",
-    "displayName": "category",
+    "singularName": "promo",
+    "pluralName": "promos",
+    "displayName": "promo",
     "description": ""
   },
   "options": {
@@ -16,7 +16,12 @@
       "type": "string",
       "required": true
     },
-    "image": {
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "thumbnail": {
       "type": "media",
       "multiple": false,
       "required": true,
@@ -24,9 +29,8 @@
         "images"
       ]
     },
-    "slug": {
-      "type": "uid",
-      "targetField": "title",
+    "date": {
+      "type": "datetime",
       "required": true
     }
   }

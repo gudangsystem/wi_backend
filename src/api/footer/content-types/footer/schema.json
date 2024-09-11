@@ -1,0 +1,40 @@
+{
+  "kind": "singleType",
+  "collectionName": "footers",
+  "info": {
+    "singularName": "footer",
+    "pluralName": "footers",
+    "displayName": "footer",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "office_center": {
+      "type": "string",
+      "required": true
+    },
+    "office_branch": {
+      "type": "string",
+      "required": true
+    },
+    "office_telp": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "copyright": {
+      "type": "string",
+      "required": true
+    },
+    "operating_hours": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "reviews",
+  "info": {
+    "singularName": "review",
+    "pluralName": "reviews",
+    "displayName": "review",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "idUser": {
+      "type": "integer",
+      "required": true
+    },
+    "username": {
+      "type": "string",
+      "required": true
+    },
+    "rate": {
+      "type": "integer",
+      "required": true
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "desc": {
+      "type": "text",
+      "required": false
+    }
+  }
+}
