@@ -28,10 +28,6 @@
       "allowedTypes": [
         "images"
       ]
-    },
-    "date": {
-      "type": "datetime",
-      "required": true
     }
   }
 }

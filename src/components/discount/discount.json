@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_discount_discounts",
+  "info": {
+    "displayName": "discount"
+  },
+  "options": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "discount_rupiah",
+        "discount_percentage"
+      ]
+    },
+    "value": {
+      "type": "biginteger"
+    }
+  }
+}

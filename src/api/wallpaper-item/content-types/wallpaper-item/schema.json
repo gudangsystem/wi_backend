@@ -1,39 +1,38 @@
 {
   "kind": "collectionType",
-  "collectionName": "categories",
+  "collectionName": "wallpaper_items",
   "info": {
-    "singularName": "category",
-    "pluralName": "categories",
-    "displayName": "category",
-    "description": ""
+    "singularName": "wallpaper-item",
+    "pluralName": "wallpaper-items",
+    "displayName": "wallpaperItem"
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
+    "name": {
       "type": "string",
       "required": true
     },
-    "image": {
-      "type": "media",
-      "multiple": false,
-      "required": true,
+    "thumbnail": {
       "allowedTypes": [
         "images"
-      ]
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
     },
     "slug": {
       "type": "uid",
-      "targetField": "title",
+      "targetField": "name",
       "required": true
     },
     "sub_categories": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::sub-category.sub-category",
-      "mappedBy": "categories"
+      "mappedBy": "wallpaper_items"
     }
   }
 }

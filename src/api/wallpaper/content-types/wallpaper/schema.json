@@ -4,7 +4,8 @@
   "info": {
     "singularName": "wallpaper",
     "pluralName": "wallpapers",
-    "displayName": "wallpaper"
+    "displayName": "wallpaper",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -12,11 +13,15 @@
   "pluginOptions": {},
   "attributes": {
     "banners": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
+    },
+    "youtubeChannel": {
+      "type": "text"
     }
   }
 }
