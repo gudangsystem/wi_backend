@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * flooring controller
+ * accessorie controller
  */
 
 const { createCoreController } = require('@strapi/strapi').factories;
 
-module.exports = createCoreController('api::flooring.flooring');
+module.exports = createCoreController('api::accessorie.accessorie');

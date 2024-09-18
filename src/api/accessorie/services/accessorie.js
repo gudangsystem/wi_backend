@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * flooring service
+ * accessorie service
  */
 
 const { createCoreService } = require('@strapi/strapi').factories;
 
-module.exports = createCoreService('api::flooring.flooring');
+module.exports = createCoreService('api::accessorie.accessorie');

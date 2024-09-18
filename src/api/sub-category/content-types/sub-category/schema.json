@@ -27,16 +27,30 @@
       "target": "api::category.category",
       "inversedBy": "sub_categories"
     },
-    "products": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::product.product",
-      "mappedBy": "sub_categories"
-    },
     "wallpaper_items": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::wallpaper-item.wallpaper-item",
+      "inversedBy": "sub_categories"
+    },
+    "products": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::product.product",
+      "inversedBy": "sub_categories"
+    },
+    "thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "accessories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::accessorie.accessorie",
       "inversedBy": "sub_categories"
     }
   }

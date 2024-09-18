@@ -38,12 +38,6 @@
       "type": "biginteger",
       "required": true
     },
-    "sub_categories": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::sub-category.sub-category",
-      "inversedBy": "products"
-    },
     "images": {
       "type": "media",
       "multiple": true,
@@ -56,6 +50,24 @@
       "type": "uid",
       "targetField": "title",
       "required": true
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "inversedBy": "products"
+    },
+    "sub_categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::sub-category.sub-category",
+      "mappedBy": "products"
+    },
+    "promos": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::promo.promo",
+      "mappedBy": "products"
     }
   }
 }

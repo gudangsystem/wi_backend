@@ -34,6 +34,23 @@
       "relation": "manyToMany",
       "target": "api::sub-category.sub-category",
       "mappedBy": "categories"
+    },
+    "products": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::product.product",
+      "mappedBy": "categories"
+    },
+    "keyPageCondition": {
+      "type": "string"
+    },
+    "banners": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true,
+      "required": true
     }
   }
 }

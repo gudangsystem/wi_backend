@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * flooring router
+ * accessorie router
  */
 
 const { createCoreRouter } = require('@strapi/strapi').factories;
 
-module.exports = createCoreRouter('api::flooring.flooring');
+module.exports = createCoreRouter('api::accessorie.accessorie');

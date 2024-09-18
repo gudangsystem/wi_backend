@@ -12,14 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "banners": {
-      "type": "media",
-      "multiple": true,
-      "required": false,
-      "allowedTypes": [
-        "images"
-      ]
-    },
     "youtubeChannel": {
       "type": "text"
     }
