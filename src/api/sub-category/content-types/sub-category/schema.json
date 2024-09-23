@@ -33,12 +33,6 @@
       "target": "api::wallpaper-item.wallpaper-item",
       "inversedBy": "sub_categories"
     },
-    "products": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::product.product",
-      "inversedBy": "sub_categories"
-    },
     "thumbnail": {
       "type": "media",
       "multiple": false,
@@ -47,11 +41,14 @@
         "images"
       ]
     },
-    "accessories": {
+    "brands": {
       "type": "relation",
       "relation": "manyToMany",
-      "target": "api::accessorie.accessorie",
-      "inversedBy": "sub_categories"
+      "target": "api::brand.brand",
+      "mappedBy": "sub_categories"
+    },
+    "date": {
+      "type": "datetime"
     }
   }
 }

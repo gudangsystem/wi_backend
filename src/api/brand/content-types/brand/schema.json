@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "products",
+  "collectionName": "brands",
   "info": {
-    "singularName": "product",
-    "pluralName": "products",
-    "displayName": "product",
+    "singularName": "brand",
+    "pluralName": "brands",
+    "displayName": "brand",
     "description": ""
   },
   "options": {
@@ -17,63 +17,60 @@
       "required": true
     },
     "desc": {
-      "type": "text",
-      "required": false
+      "type": "text"
     },
     "size_width": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "size_height": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "discount": {
-      "displayName": "discount",
       "type": "component",
       "repeatable": false,
       "component": "discount.discount"
     },
     "price": {
-      "type": "biginteger",
-      "required": true
+      "type": "biginteger"
     },
     "images": {
       "type": "media",
       "multiple": true,
-      "required": true,
+      "required": false,
       "allowedTypes": [
         "images"
       ]
     },
     "slug": {
       "type": "uid",
-      "targetField": "title",
-      "required": true
+      "targetField": "title"
     },
-    "promos": {
+    "categories": {
       "type": "relation",
       "relation": "manyToMany",
-      "target": "api::promo.promo",
-      "mappedBy": "products"
+      "target": "api::category.category",
+      "inversedBy": "brands"
     },
-    "brands": {
+    "sub_categories": {
       "type": "relation",
       "relation": "manyToMany",
-      "target": "api::brand.brand",
-      "mappedBy": "products"
+      "target": "api::sub-category.sub-category",
+      "inversedBy": "brands"
     },
     "unit": {
       "type": "string"
     },
     "product_weight": {
-      "type": "string"
+      "type": "text"
     },
     "date": {
       "type": "datetime"
     },
-    "product_code": {
-      "type": "string"
+    "products": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::product.product",
+      "inversedBy": "brands"
     }
   }
 }
