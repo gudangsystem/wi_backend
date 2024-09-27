@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "how_to_shops",
+  "info": {
+    "singularName": "how-to-shop",
+    "pluralName": "how-to-shops",
+    "displayName": "howToShop"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "content": {
+      "type": "text"
+    }
+  }
+}
