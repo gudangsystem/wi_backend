@@ -27,12 +27,6 @@
       "target": "api::category.category",
       "inversedBy": "sub_categories"
     },
-    "wallpaper_items": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::wallpaper-item.wallpaper-item",
-      "inversedBy": "sub_categories"
-    },
     "thumbnail": {
       "type": "media",
       "multiple": false,
