@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "wallpaper_by_styles",
+  "info": {
+    "singularName": "wallpaper-by-style",
+    "pluralName": "wallpaper-by-styles",
+    "displayName": "wallpaperByStyle"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "brands": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::brand.brand",
+      "inversedBy": "wallpaper_by_styles"
+    },
+    "thumbnail": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
