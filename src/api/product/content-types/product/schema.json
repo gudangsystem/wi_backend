@@ -74,6 +74,9 @@
     },
     "product_code": {
       "type": "string"
+    },
+    "stock": {
+      "type": "integer"
     }
   }
 }

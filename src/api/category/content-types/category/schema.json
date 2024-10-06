@@ -35,9 +35,6 @@
       "target": "api::sub-category.sub-category",
       "mappedBy": "categories"
     },
-    "keyPageCondition": {
-      "type": "string"
-    },
     "banners": {
       "type": "media",
       "multiple": true,
@@ -55,6 +52,17 @@
     "date": {
       "type": "datetime",
       "required": true
+    },
+    "keyPageCondition": {
+      "type": "enumeration",
+      "enum": [
+        "Wallpaper",
+        "Flooring",
+        "Wallpanel",
+        "Carpet",
+        "Decking",
+        "Rollerblind"
+      ]
     }
   }
 }

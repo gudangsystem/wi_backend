@@ -4,7 +4,8 @@
   "info": {
     "singularName": "about",
     "pluralName": "abouts",
-    "displayName": "about"
+    "displayName": "about",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -12,28 +13,24 @@
   "pluginOptions": {},
   "attributes": {
     "banners": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": true,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "about": {
       "type": "text",
       "required": true
     },
     "portfolios": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": true,
-      "required": true
-    },
-    "maps": {
-      "type": "text",
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }
