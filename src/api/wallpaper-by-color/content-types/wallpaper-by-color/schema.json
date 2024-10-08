@@ -4,7 +4,8 @@
   "info": {
     "singularName": "wallpaper-by-color",
     "pluralName": "wallpaper-by-colors",
-    "displayName": "wallpaperByColor"
+    "displayName": "wallpaperByColor",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -19,19 +20,19 @@
       "type": "uid",
       "targetField": "title"
     },
-    "brands": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::brand.brand",
-      "inversedBy": "wallpaper_by_colors"
-    },
     "thumbnail": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "products": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::product.product",
+      "inversedBy": "wallpaper_by_colors"
     }
   }
 }

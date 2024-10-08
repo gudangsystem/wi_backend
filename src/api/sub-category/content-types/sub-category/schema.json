@@ -27,14 +27,6 @@
       "target": "api::category.category",
       "inversedBy": "sub_categories"
     },
-    "thumbnail": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images"
-      ]
-    },
     "brands": {
       "type": "relation",
       "relation": "manyToMany",
@@ -43,6 +35,13 @@
     },
     "date": {
       "type": "datetime"
+    },
+    "thumbnail": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

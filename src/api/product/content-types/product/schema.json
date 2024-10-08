@@ -20,24 +20,6 @@
       "type": "text",
       "required": false
     },
-    "size_width": {
-      "type": "string",
-      "required": true
-    },
-    "size_height": {
-      "type": "string",
-      "required": true
-    },
-    "discount": {
-      "displayName": "discount",
-      "type": "component",
-      "repeatable": false,
-      "component": "discount.discount"
-    },
-    "price": {
-      "type": "biginteger",
-      "required": true
-    },
     "images": {
       "type": "media",
       "multiple": true,
@@ -63,12 +45,6 @@
       "target": "api::brand.brand",
       "mappedBy": "products"
     },
-    "unit": {
-      "type": "string"
-    },
-    "product_weight": {
-      "type": "string"
-    },
     "date": {
       "type": "datetime"
     },
@@ -77,6 +53,28 @@
     },
     "stock": {
       "type": "integer"
+    },
+    "available": {
+      "type": "boolean",
+      "default": true
+    },
+    "wallpaper_by_colors": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::wallpaper-by-color.wallpaper-by-color",
+      "mappedBy": "products"
+    },
+    "wallpaper_by_designers": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::wallpaper-by-designer.wallpaper-by-designer",
+      "mappedBy": "products"
+    },
+    "wallpaper_by_styles": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::wallpaper-by-style.wallpaper-by-style",
+      "mappedBy": "products"
     }
   }
 }

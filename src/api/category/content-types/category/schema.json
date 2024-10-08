@@ -56,12 +56,12 @@
     "keyPageCondition": {
       "type": "enumeration",
       "enum": [
-        "Wallpaper",
-        "Flooring",
-        "Wallpanel",
-        "Carpet",
-        "Decking",
-        "Rollerblind"
+        "wallpaper",
+        "flooring",
+        "wallpanel",
+        "carpet",
+        "decking",
+        "rollerblind"
       ]
     }
   }

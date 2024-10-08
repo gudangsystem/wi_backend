@@ -4,7 +4,8 @@
   "info": {
     "singularName": "wallpaper-by-style",
     "pluralName": "wallpaper-by-styles",
-    "displayName": "wallpaperByStyle"
+    "displayName": "wallpaperByStyle",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -20,18 +21,19 @@
       "targetField": "title",
       "required": true
     },
-    "brands": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::brand.brand",
-      "inversedBy": "wallpaper_by_styles"
-    },
     "thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "products": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::product.product",
+      "inversedBy": "wallpaper_by_styles"
     }
   }
 }

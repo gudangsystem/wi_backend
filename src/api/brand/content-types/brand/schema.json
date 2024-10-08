@@ -19,12 +19,6 @@
     "desc": {
       "type": "text"
     },
-    "size_width": {
-      "type": "string"
-    },
-    "size_height": {
-      "type": "string"
-    },
     "discount": {
       "type": "component",
       "repeatable": false,
@@ -60,9 +54,6 @@
     "unit": {
       "type": "string"
     },
-    "product_weight": {
-      "type": "text"
-    },
     "date": {
       "type": "datetime"
     },
@@ -72,23 +63,17 @@
       "target": "api::product.product",
       "inversedBy": "brands"
     },
-    "wallpaper_by_colors": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::wallpaper-by-color.wallpaper-by-color",
-      "mappedBy": "brands"
+    "size_width": {
+      "type": "decimal"
     },
-    "wallpaper_by_styles": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::wallpaper-by-style.wallpaper-by-style",
-      "mappedBy": "brands"
+    "size_height": {
+      "type": "decimal"
     },
-    "wallpaper_by_designers": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::wallpaper-by-designer.wallpaper-by-designer",
-      "mappedBy": "brands"
+    "thickness": {
+      "type": "decimal"
+    },
+    "product_weight": {
+      "type": "decimal"
     }
   }
 }

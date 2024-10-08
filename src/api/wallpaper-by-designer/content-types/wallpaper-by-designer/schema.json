@@ -21,12 +21,6 @@
       "targetField": "title",
       "required": true
     },
-    "brands": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::brand.brand",
-      "inversedBy": "wallpaper_by_designers"
-    },
     "thumbnail": {
       "type": "media",
       "multiple": false,
@@ -34,6 +28,12 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "products": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::product.product",
+      "inversedBy": "wallpaper_by_designers"
     }
   }
 }
