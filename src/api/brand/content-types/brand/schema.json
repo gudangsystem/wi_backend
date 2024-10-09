@@ -74,6 +74,12 @@
     },
     "product_weight": {
       "type": "decimal"
+    },
+    "itemsPerBox": {
+      "type": "decimal"
+    },
+    "sheetsPerUnit": {
+      "type": "decimal"
     }
   }
 }
