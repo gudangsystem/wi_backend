@@ -1,0 +1,62 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "singularName": "order",
+    "pluralName": "orders",
+    "displayName": "order",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "orderItems": {
+      "type": "json"
+    },
+    "orderNumber": {
+      "type": "string"
+    },
+    "customerName": {
+      "type": "string"
+    },
+    "orderDate": {
+      "type": "datetime"
+    },
+    "orderStatus": {
+      "type": "enumeration",
+      "enum": [
+        "Dalam Proses",
+        "Dikirim",
+        "Selesai"
+      ]
+    },
+    "paymentStatus": {
+      "type": "enumeration",
+      "enum": [
+        "Belum Lunas",
+        "Lunas",
+        "Ditolak"
+      ]
+    },
+    "totalAmount": {
+      "type": "biginteger"
+    },
+    "grandTotal": {
+      "type": "decimal"
+    },
+    "userId": {
+      "type": "integer"
+    },
+    "users_permissions_users": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "orders"
+    },
+    "isPayment": {
+      "type": "boolean"
+    }
+  }
+}
