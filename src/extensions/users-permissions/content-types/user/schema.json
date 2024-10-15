@@ -9,8 +9,7 @@
     "displayName": "User"
   },
   "options": {
-    "draftAndPublish": false,
-    "timestamps": true
+    "draftAndPublish": false
   },
   "attributes": {
     "username": {
@@ -66,11 +65,39 @@
       "inversedBy": "users",
       "configurable": false
     },
+    "address": {
+      "type": "text"
+    },
     "orders": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::order.order",
       "mappedBy": "users_permissions_users"
+    },
+    "province": {
+      "type": "json"
+    },
+    "city": {
+      "type": "json"
+    },
+    "subdistrict": {
+      "type": "json"
+    },
+    "first_name": {
+      "type": "string"
+    },
+    "last_name": {
+      "type": "string"
+    },
+    "fullname": {
+      "type": "string"
+    },
+    "role_user": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string",
+      "required": false
     }
   }
 }
