@@ -3,8 +3,7 @@ const qs = require("qs");
 
 module.exports = {
   async costs(ctx, next) {
-    const rawData = ctx.request.body?.data;
-
+    const rawData = ctx.request.body;
     if (!rawData || typeof rawData !== "object") {
       return ctx.badRequest("Data harus dalam format JSON");
     }
