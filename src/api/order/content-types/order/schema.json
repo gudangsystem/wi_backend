@@ -57,6 +57,18 @@
     },
     "isPayment": {
       "type": "boolean"
+    },
+    "ongkir": {
+      "displayName": "ongkir",
+      "type": "component",
+      "repeatable": false,
+      "component": "ongkir.ongkir"
+    },
+    "shippingAddress": {
+      "type": "text"
+    },
+    "paymentMethodJSON": {
+      "type": "json"
     }
   }
 }
