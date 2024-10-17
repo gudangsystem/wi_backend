@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "flashsales",
+  "info": {
+    "singularName": "flashsale",
+    "pluralName": "flashsales",
+    "displayName": "flashsale"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "active": {
+      "type": "boolean"
+    },
+    "expiry_date": {
+      "type": "datetime"
+    },
+    "products": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product.product"
+    }
+  }
+}
