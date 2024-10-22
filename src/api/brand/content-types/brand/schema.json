@@ -80,6 +80,11 @@
     },
     "sheetsPerUnit": {
       "type": "decimal"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo-data.seo"
     }
   }
 }

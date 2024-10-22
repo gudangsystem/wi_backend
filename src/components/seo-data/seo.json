@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_seo_data_seos",
+  "info": {
+    "displayName": "seo"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "text",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "viewport": {
+      "type": "text",
+      "required": true
+    },
+    "keywords": {
+      "type": "text",
+      "required": true
+    },
+    "robots": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

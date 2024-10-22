@@ -75,6 +75,11 @@
       "relation": "manyToMany",
       "target": "api::wallpaper-by-style.wallpaper-by-style",
       "mappedBy": "products"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo-data.seo"
     }
   }
 }
