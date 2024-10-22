@@ -4,7 +4,8 @@
   "info": {
     "singularName": "flashsale",
     "pluralName": "flashsales",
-    "displayName": "flashsale"
+    "displayName": "flashsale",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -21,6 +22,11 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::product.product"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo-data.seo"
     }
   }
 }

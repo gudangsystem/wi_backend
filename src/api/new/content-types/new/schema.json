@@ -47,6 +47,11 @@
       "type": "uid",
       "targetField": "title",
       "required": true
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo-data.seo"
     }
   }
 }

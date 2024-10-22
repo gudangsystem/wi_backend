@@ -38,6 +38,11 @@
     "date": {
       "type": "datetime",
       "required": true
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo-data.seo"
     }
   }
 }
