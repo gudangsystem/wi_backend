@@ -93,7 +93,8 @@
       "type": "string"
     },
     "role_user": {
-      "type": "string"
+      "type": "string",
+      "default": "customer"
     },
     "phone": {
       "type": "string",
