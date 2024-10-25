@@ -24,14 +24,6 @@
         "images"
       ]
     },
-    "banner": {
-      "type": "media",
-      "multiple": false,
-      "required": true,
-      "allowedTypes": [
-        "images"
-      ]
-    },
     "date": {
       "type": "datetime",
       "required": true
