@@ -37,6 +37,9 @@
       "type": "component",
       "repeatable": false,
       "component": "seo-data.seo"
+    },
+    "no_telp_admin_order": {
+      "type": "string"
     }
   }
 }

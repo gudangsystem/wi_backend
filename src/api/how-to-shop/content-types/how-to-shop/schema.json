@@ -4,7 +4,8 @@
   "info": {
     "singularName": "how-to-shop",
     "pluralName": "how-to-shops",
-    "displayName": "howToShop"
+    "displayName": "howToShop",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -12,7 +13,7 @@
   "pluginOptions": {},
   "attributes": {
     "content": {
-      "type": "text"
+      "type": "richtext"
     }
   }
 }
