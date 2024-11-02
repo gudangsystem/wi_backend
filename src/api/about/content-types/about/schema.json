@@ -39,7 +39,8 @@
       "component": "seo-data.seo"
     },
     "no_telp_admin_order": {
-      "type": "string"
+      "type": "string",
+      "default": "+62"
     }
   }
 }

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "customer-service",
     "pluralName": "customer-services",
-    "displayName": "customer_service"
+    "displayName": "customer_service",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -17,7 +18,8 @@
     },
     "whatsapp": {
       "type": "string",
-      "required": true
+      "required": true,
+      "default": "+62"
     }
   }
 }
