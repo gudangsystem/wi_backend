@@ -75,16 +75,16 @@
     "product_weight": {
       "type": "decimal"
     },
-    "itemsPerBox": {
-      "type": "decimal"
-    },
-    "sheetsPerUnit": {
-      "type": "decimal"
-    },
     "seo": {
       "type": "component",
       "repeatable": false,
       "component": "seo-data.seo"
+    },
+    "itemsPerBox": {
+      "type": "string"
+    },
+    "sheetsPerUnit": {
+      "type": "string"
     }
   }
 }
