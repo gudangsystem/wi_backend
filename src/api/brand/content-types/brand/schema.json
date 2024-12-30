@@ -85,6 +85,16 @@
     },
     "sheetsPerUnit": {
       "type": "string"
+    },
+    "pricePerMeter": {
+      "type": "string"
+    },
+    "unitOfMeasure": {
+      "type": "enumeration",
+      "enum": [
+        "cm",
+        "m"
+      ]
     }
   }
 }
