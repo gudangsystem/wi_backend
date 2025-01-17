@@ -69,9 +69,6 @@
     "size_height": {
       "type": "decimal"
     },
-    "thickness": {
-      "type": "decimal"
-    },
     "product_weight": {
       "type": "decimal"
     },
@@ -89,7 +86,17 @@
     "pricePerMeter": {
       "type": "string"
     },
-    "unitOfMeasure": {
+    "unitOfMeasureWidth": {
+      "type": "enumeration",
+      "enum": [
+        "cm",
+        "m"
+      ]
+    },
+    "thickness": {
+      "type": "string"
+    },
+    "unitOfMeasureHeight": {
       "type": "enumeration",
       "enum": [
         "cm",
