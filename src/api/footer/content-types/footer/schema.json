@@ -35,6 +35,12 @@
     "operating_hours": {
       "type": "text",
       "required": true
+    },
+    "office_center_link_maps": {
+      "type": "text"
+    },
+    "office_branch_link_maps": {
+      "type": "text"
     }
   }
 }
