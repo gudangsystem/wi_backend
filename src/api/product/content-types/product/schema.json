@@ -80,6 +80,9 @@
       "type": "component",
       "repeatable": false,
       "component": "seo-data.seo"
+    },
+    "keyword": {
+      "type": "text"
     }
   }
 }
