@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_payment_account_content_payment_account_contents",
+  "info": {
+    "displayName": "payment_account_content"
+  },
+  "options": {},
+  "attributes": {
+    "no_rek": {
+      "type": "string"
+    },
+    "account_number": {
+      "type": "string"
+    },
+    "logo": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

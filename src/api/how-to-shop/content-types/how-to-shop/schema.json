@@ -12,8 +12,91 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "content": {
-      "type": "richtext"
+    "consultation_desc": {
+      "type": "text"
+    },
+    "how_to_shop_title": {
+      "type": "string"
+    },
+    "how_to_shop_desc": {
+      "type": "text"
+    },
+    "review_cart_title": {
+      "type": "string"
+    },
+    "review_cart_desc": {
+      "type": "text"
+    },
+    "shipping_method_title": {
+      "type": "string"
+    },
+    "shipping_method_desc": {
+      "type": "text"
+    },
+    "submit_order_title": {
+      "type": "string"
+    },
+    "submit_order_desc": {
+      "type": "text"
+    },
+    "payment_account_title": {
+      "type": "string"
+    },
+    "payment_account_content": {
+      "displayName": "payment_account_content",
+      "type": "component",
+      "repeatable": true,
+      "component": "payment-account-content.payment-account-content"
+    },
+    "consultation_image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "how_to_shop_image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "review_cart_image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "shipping_method_image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "submit_order_image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
