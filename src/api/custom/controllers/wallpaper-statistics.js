@@ -50,7 +50,10 @@ module.exports = {
       // Cari data utama (misal Anak Anak)
       const mainMatched = allMainData.find(
         (item) =>
-          item.name === value || item.title === value || item.label === value
+          item.name === value ||
+          item.title === value ||
+          item.slug === value ||
+          item.label === value
       );
 
       if (!mainMatched) {
@@ -65,7 +68,7 @@ module.exports = {
 
       // 🔹 Tambahkan bagian utama juga ke result
       const mainFormatted = allMainData.map((item) => ({
-        name: item.name || item.title || item.label,
+        name: item.name || item.title || item.slug || item.label,
         count: item.products?.length || 0,
       }));
 
@@ -83,7 +86,7 @@ module.exports = {
           ).length;
 
           return {
-            name: item.name || item.title || item.label,
+            name: item.name || item.title || item.slug || item.label,
             count,
           };
         });
