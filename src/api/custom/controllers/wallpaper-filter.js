@@ -9,6 +9,7 @@ module.exports = {
         return ctx.badRequest("Field 'category' dan 'value' wajib diisi.");
       }
 
+      // Mapping nama koleksi
       const collectionMap = {
         "wallpaper-by-style": "api::wallpaper-by-style.wallpaper-by-style",
         "wallpaper-by-color": "api::wallpaper-by-color.wallpaper-by-color",
@@ -21,24 +22,35 @@ module.exports = {
         return ctx.badRequest(`Category '${category}' tidak dikenali.`);
       }
 
-      // --- 1️⃣ Ambil data utama (misal: style = Anak Anak)
+      // Pastikan value selalu array
+      const mainValues = Array.isArray(value) ? value : [value];
+
+      // --- 1️⃣ Ambil data utama (misal: style = ['Anak Anak', 'Dewasa'])
       const allMainData = await strapi.entityService.findMany(mainCollection, {
         populate: { products: true },
       });
 
-      const mainMatched = allMainData.find(
+      // Ambil semua data yang cocok dengan salah satu value
+      const mainMatchedData = allMainData.filter(
         (item) =>
-          item.name === value || item.title === value || item.label === value
+          mainValues.includes(item.name) ||
+          mainValues.includes(item.title) ||
+          mainValues.includes(item.label)
       );
 
-      if (!mainMatched) {
-        return ctx.notFound(`Data dengan value '${value}' tidak ditemukan.`);
+      if (mainMatchedData.length === 0) {
+        return ctx.notFound(
+          `Data dengan value '${mainValues.join(", ")}' tidak ditemukan.`
+        );
       }
 
-      // Produk dengan style Anak Anak
-      let finalProducts = mainMatched.products || [];
+      // Gabungkan semua produk dari semua value utama
+      let finalProducts = mainMatchedData.flatMap(
+        (item) => item.products || []
+      );
+      let baseProductIds = [...new Set(finalProducts.map((p) => p.id))];
 
-      // --- 2️⃣ Kelompokkan filter berdasarkan kategori
+      // --- 2️⃣ Kelompokkan filter tambahan
       const colorFilters = filterAddOn
         .filter((f) => f.category === "wallpaper-by-color")
         .map((f) => f.value);
@@ -46,11 +58,10 @@ module.exports = {
         .filter((f) => f.category === "wallpaper-by-designer")
         .map((f) => f.value);
 
-      // --- 3️⃣ Ambil semua relasi warna & designer
       const colorCollection = collectionMap["wallpaper-by-color"];
       const designerCollection = collectionMap["wallpaper-by-designer"];
 
-      // Ambil produk berdasarkan warna
+      // --- 3️⃣ Ambil produk berdasarkan warna
       let colorProductIds = [];
       if (colorFilters.length > 0) {
         const allColors = await strapi.entityService.findMany(colorCollection, {
@@ -68,10 +79,10 @@ module.exports = {
             colorProductIds.push(...colorItem.products.map((p) => p.id));
           }
         });
-        colorProductIds = [...new Set(colorProductIds)]; // hapus duplikat
+        colorProductIds = [...new Set(colorProductIds)];
       }
 
-      // Ambil produk berdasarkan designer
+      // --- 4️⃣ Ambil produk berdasarkan designer
       let designerProductIds = [];
       if (designerFilters.length > 0) {
         const allDesigners = await strapi.entityService.findMany(
@@ -95,7 +106,7 @@ module.exports = {
         designerProductIds = [...new Set(designerProductIds)];
       }
 
-      // --- 4️⃣ Filter produk berdasarkan kombinasi
+      // --- 5️⃣ Filter produk akhir berdasarkan kombinasi
       finalProducts = finalProducts.filter((p) => {
         const matchColor =
           colorFilters.length === 0 || colorProductIds.includes(p.id);
@@ -104,11 +115,11 @@ module.exports = {
         return matchColor && matchDesigner;
       });
 
-      // --- 5️⃣ Hasil akhir
+      // --- 6️⃣ Hasil akhir
       return {
         base: {
           category,
-          value,
+          value: mainValues,
           totalProducts: finalProducts.length,
         },
         filters: filterAddOn,
