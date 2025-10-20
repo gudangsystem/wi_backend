@@ -25,9 +25,20 @@ module.exports = {
       // Pastikan value selalu array
       const mainValues = Array.isArray(value) ? value : [value];
 
-      // --- 1️⃣ Ambil data utama (misal: style = ['Anak Anak', 'Dewasa'])
+      // --- 1️⃣ Ambil data utama dengan populate products lengkap
       const allMainData = await strapi.entityService.findMany(mainCollection, {
-        populate: { products: true },
+        populate: {
+          products: {
+            populate: {
+              brands: {
+                populate: {
+                  discount: true,
+                },
+              },
+              images: true,
+            },
+          },
+        },
       });
 
       // Ambil semua data yang cocok dengan salah satu value
@@ -65,7 +76,18 @@ module.exports = {
       let colorProductIds = [];
       if (colorFilters.length > 0) {
         const allColors = await strapi.entityService.findMany(colorCollection, {
-          populate: { products: true },
+          populate: {
+            products: {
+              populate: {
+                brands: {
+                  populate: {
+                    discount: true,
+                  },
+                },
+                images: true,
+              },
+            },
+          },
         });
 
         colorFilters.forEach((colorVal) => {
@@ -88,7 +110,18 @@ module.exports = {
         const allDesigners = await strapi.entityService.findMany(
           designerCollection,
           {
-            populate: { products: true },
+            populate: {
+              products: {
+                populate: {
+                  brands: {
+                    populate: {
+                      discount: true,
+                    },
+                  },
+                  images: true,
+                },
+              },
+            },
           }
         );
 
