@@ -164,6 +164,7 @@ module.exports = {
         filters: filterAddOn,
         products: finalProducts.map((p) => ({
           id: p.id,
+          slug: p.slug,
           title: p.title,
           price: p.price,
           brands: p.brands,
