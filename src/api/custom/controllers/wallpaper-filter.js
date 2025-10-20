@@ -124,9 +124,7 @@ module.exports = {
         },
         filters: filterAddOn,
         products: finalProducts.map((p) => ({
-          id: p.id,
-          title: p.title || p.name,
-          slug: p.slug,
+          ...p,
         })),
       };
     } catch (error) {
