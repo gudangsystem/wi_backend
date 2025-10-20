@@ -35,7 +35,9 @@ module.exports = {
                   discount: true,
                 },
               },
-              images: true,
+              images: {
+                fields: ["url"],
+              },
             },
           },
         },
@@ -84,7 +86,9 @@ module.exports = {
                     discount: true,
                   },
                 },
-                images: true,
+                images: {
+                  fields: ["url"],
+                },
               },
             },
           },
@@ -118,7 +122,9 @@ module.exports = {
                       discount: true,
                     },
                   },
-                  images: true,
+                  images: {
+                    fields: ["url"],
+                  },
                 },
               },
             },
@@ -157,7 +163,11 @@ module.exports = {
         },
         filters: filterAddOn,
         products: finalProducts.map((p) => ({
-          ...p,
+          id: p.id,
+          name: p.name,
+          price: p.price,
+          brands: p.brands,
+          images: p.images,
         })),
       };
     } catch (error) {
