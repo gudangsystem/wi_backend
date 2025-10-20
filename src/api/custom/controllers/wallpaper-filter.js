@@ -38,10 +38,6 @@ module.exports = {
           mainValues.includes(item.label)
       );
 
-      console.log(mainValues, "mainValues");
-      console.log(allMainData, "allMainData");
-      console.log(mainMatchedData, "mainMatchedData");
-
       if (mainMatchedData.length === 0) {
         return ctx.notFound(
           `Data dengan value '${mainValues.join(", ")}' tidak ditemukan.`
