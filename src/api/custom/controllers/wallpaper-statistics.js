@@ -42,9 +42,16 @@ module.exports = {
           return ctx.badRequest("Category tidak dikenali.");
       }
 
-      // Ambil semua data di koleksi utama
+      // Ambil semua data di koleksi utama (hanya published)
       const allMainData = await strapi.entityService.findMany(mainCollection, {
-        populate: { products: true },
+        filters: {
+          publishedAt: { $notNull: true },
+        },
+        populate: {
+          products: {
+            filters: { publishedAt: { $notNull: true } },
+          },
+        },
       });
 
       // Cari data utama (misal Anak Anak)
@@ -66,18 +73,25 @@ module.exports = {
 
       const result = {};
 
-      // 🔹 Tambahkan bagian utama juga ke result
+      // 🔹 Tambahkan bagian utama ke result
       const mainFormatted = allMainData.map((item) => ({
         name: item.name || item.title || item.slug || item.label,
-        count: item.products?.length || 0,
+        count: item.products?.filter((p) => p.publishedAt)?.length || 0,
       }));
 
       result[category] = mainFormatted;
 
-      // 🔹 Loop untuk setiap koleksi relasi (color/designer/dst)
+      // 🔹 Loop untuk setiap koleksi relasi
       for (const collection of relatedCollections) {
         const allData = await strapi.entityService.findMany(collection, {
-          populate: { products: true },
+          filters: {
+            publishedAt: { $notNull: true },
+          },
+          populate: {
+            products: {
+              filters: { publishedAt: { $notNull: true } },
+            },
+          },
         });
 
         const formatted = allData.map((item) => {
@@ -91,7 +105,9 @@ module.exports = {
           };
         });
 
-        result[collection.split(".")[1]] = formatted;
+        // simpan berdasarkan nama koleksi (tanpa prefix "api::")
+        const key = collection.split(".")[1]; // contoh: wallpaper-by-color
+        result[key] = formatted;
       }
 
       return result;

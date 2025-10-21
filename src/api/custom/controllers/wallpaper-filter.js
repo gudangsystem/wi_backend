@@ -25,10 +25,14 @@ module.exports = {
       // Pastikan value selalu array
       const mainValues = Array.isArray(value) ? value : [value];
 
-      // --- 1️⃣ Ambil data utama dengan populate products lengkap
+      // --- 1️⃣ Ambil data utama hanya yang published
       const allMainData = await strapi.entityService.findMany(mainCollection, {
+        filters: {
+          publishedAt: { $notNull: true },
+        },
         populate: {
           products: {
+            filters: { publishedAt: { $notNull: true } },
             populate: {
               brands: {
                 populate: {
@@ -74,12 +78,14 @@ module.exports = {
       const colorCollection = collectionMap["wallpaper-by-color"];
       const designerCollection = collectionMap["wallpaper-by-designer"];
 
-      // --- 3️⃣ Ambil produk berdasarkan warna
+      // --- 3️⃣ Ambil produk berdasarkan warna (hanya published)
       let colorProductIds = [];
       if (colorFilters.length > 0) {
         const allColors = await strapi.entityService.findMany(colorCollection, {
+          filters: { publishedAt: { $notNull: true } },
           populate: {
             products: {
+              filters: { publishedAt: { $notNull: true } },
               populate: {
                 brands: {
                   populate: {
@@ -108,14 +114,16 @@ module.exports = {
         colorProductIds = [...new Set(colorProductIds)];
       }
 
-      // --- 4️⃣ Ambil produk berdasarkan designer
+      // --- 4️⃣ Ambil produk berdasarkan designer (hanya published)
       let designerProductIds = [];
       if (designerFilters.length > 0) {
         const allDesigners = await strapi.entityService.findMany(
           designerCollection,
           {
+            filters: { publishedAt: { $notNull: true } },
             populate: {
               products: {
+                filters: { publishedAt: { $notNull: true } },
                 populate: {
                   brands: {
                     populate: {
