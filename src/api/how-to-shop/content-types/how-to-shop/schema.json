@@ -12,9 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "consultation_desc": {
-      "type": "text"
-    },
     "how_to_shop_title": {
       "type": "string"
     },
@@ -105,6 +102,9 @@
     },
     "consultation_no_telp": {
       "type": "string"
+    },
+    "consultation_desc": {
+      "type": "richtext"
     }
   }
 }
