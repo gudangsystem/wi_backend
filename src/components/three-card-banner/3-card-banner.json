@@ -22,6 +22,9 @@
       "type": "component",
       "repeatable": false,
       "component": "linked.linked"
+    },
+    "title": {
+      "type": "string"
     }
   }
 }
