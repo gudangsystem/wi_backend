@@ -1,7 +1,8 @@
 {
   "collectionName": "components_linked_linkeds",
   "info": {
-    "displayName": "linked"
+    "displayName": "linked",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -9,6 +10,9 @@
       "type": "string"
     },
     "redirect": {
+      "type": "text"
+    },
+    "description": {
       "type": "text"
     }
   }

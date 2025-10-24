@@ -1,19 +1,21 @@
 {
   "collectionName": "components_three_card_banner_3_card_banners",
   "info": {
-    "displayName": "3_card_banner"
+    "displayName": "3_card_banner",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "title": {
+    "background_cover": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "linked": {
       "displayName": "linked",
