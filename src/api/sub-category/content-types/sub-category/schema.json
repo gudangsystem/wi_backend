@@ -46,6 +46,12 @@
     },
     "description": {
       "type": "text"
+    },
+    "three_card_banner": {
+      "displayName": "3_card_banner",
+      "type": "component",
+      "repeatable": true,
+      "component": "three-card-banner.3-card-banner"
     }
   }
 }

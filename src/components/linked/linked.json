@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_linked_linkeds",
+  "info": {
+    "displayName": "linked"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "redirect": {
+      "type": "text"
+    }
+  }
+}

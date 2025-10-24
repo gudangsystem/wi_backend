@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_three_card_banner_3_card_banners",
+  "info": {
+    "displayName": "3_card_banner"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "linked": {
+      "displayName": "linked",
+      "type": "component",
+      "repeatable": false,
+      "component": "linked.linked"
+    }
+  }
+}
